@@ -11,6 +11,15 @@ class Contact {
     get formSubmitButton() { return $('#form-submit') }
     get formErrorMessage() { return $('.errors=Please correct the errors below:') }
 
+    fillOutForm(first, last, email, company, purpose, message) {
+        this.firstNameField.setValue(first)
+        this.lastNameField.setValue(last)
+        this.emailField.setValue(email)
+        this.companyNameField.setValue(company)
+        this.purposeDropdown.selectByIndex(purpose)
+        this.messageField.setValue(message)
+        this.permissionCheckbox.click()
+    }
 }
 
 module.exports = new Contact
