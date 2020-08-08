@@ -32,6 +32,7 @@ describe('Send a Message', () => {
             7,
             specifics.message
         )
+        contact.formSubmitButton.click()
     });
 
 });
