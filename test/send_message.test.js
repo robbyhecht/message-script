@@ -1,4 +1,3 @@
-const main = require("../page/main.page")
 const nav = require("../page/nav.page")
 const contact = require("../page/contact.page")
 const specifics = require("../specifics");
@@ -8,16 +7,16 @@ describe('Send a Message', () => {
     browser.url("/");
 
     it('verifies home page heading', () => {
-        main.mainHeading.waitForDisplayed()
-        const headingText = main.mainHeading.getText()
+        $('h1').waitForDisplayed()
+        const headingText = $('h1').getText()
         assert.equal(headingText, "Helping eLearning platforms work well together")
     });
-    it('clicks contact link', () => {
-        nav.clickContact()
+    it('clicks nav contact link', () => {
+        nav.clickContactUs()
     });
     it('verifies contact page heading', () => {
-        contact.contactHeading.waitForDisplayed()
-        const headingText = contact.contactHeading.getText()
+        $('h1').waitForDisplayed()
+        const headingText = $('h1').getText()
         assert.equal(headingText, "Contact us")
     });
     it('completes and submits form', () => {
@@ -29,8 +28,7 @@ describe('Send a Message', () => {
         contact.purposeDropdown.selectByIndex(7)
         contact.messageField.setValue(specifics.message)
         contact.permissionCheckbox.click()
-        contact.formSubmitButton.click()
-        browser.pause(4000)
+        // contact.formSubmitButton.click()
     });
 
 });

@@ -2,7 +2,7 @@ class Nav {
 
     get contactLink() { return $('=Contact Us') }
 
-    clickContact() {
+    clickContactUs() {
         this.contactLink.waitForDisplayed()
         this.contactLink.click()
     }
