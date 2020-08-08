@@ -28,7 +28,8 @@ describe('Send a Message', () => {
         contact.purposeDropdown.selectByIndex(7)
         contact.messageField.setValue(specifics.message)
         contact.permissionCheckbox.click()
-        // contact.formSubmitButton.click()
+        contact.formSubmitButton.click()
+        browser.pause(5000)
     });
 
 });
